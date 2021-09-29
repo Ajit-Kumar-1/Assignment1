@@ -34,11 +34,11 @@ namespace Assignment1
 
         private void clearButton_Click(object sender, EventArgs e)
         {
-            panel1.Show();
-            this.Text = "Welcome to Mega Cinema";
-            ticketsCountSection.Show();
-            cashierNameLabel.Show();
-            panel2.Hide();
+            while (Controls.Count > 0)
+            {
+                Controls[0].Dispose();
+            }
+            InitializeComponent();
         }
 
         private void calculateButton_Click(object sender, EventArgs e)
@@ -54,6 +54,7 @@ namespace Assignment1
             }   
             catch
             {
+                MessageBox.Show("Please enter numerical data for number of adult tickets", "Data Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             try
@@ -62,6 +63,7 @@ namespace Assignment1
             }
             catch
             {
+                MessageBox.Show("Please enter numerical data for number of student tickets", "Data Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             try
@@ -70,11 +72,17 @@ namespace Assignment1
             }
             catch
             {
+                MessageBox.Show("Please enter numerical data for number of children tickets", "Data Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            var totalTickets = (adultCount + studentCount + childCount);
+            if(totalTickets == 0)
+            {
+                MessageBox.Show("Please select some tickets", "Data Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             this.Text = "Transaction Summary";
             informationDisplay.Show();
-            var totalTickets = (adultCount + studentCount + childCount);
             totalTicketsSoldDisplay.Text = totalTickets.ToString();
             var totalAmount = adultCount * 7.99 + studentCount * 4.99 + childCount * 2.99;
             totalReceiptsDisplay.Text = totalAmount.ToString("C");
@@ -93,6 +101,8 @@ namespace Assignment1
 
         private void summaryButton_Click(object sender, EventArgs e)
         {
+            if (summaryButton.Text == "")
+                return;
             ticketsCountSection.Hide();
             cashierNameLabel.Hide();
             cashierNameInput.Hide();
@@ -104,6 +114,28 @@ namespace Assignment1
             totalTicketsSoldDisplay.Text = totalTicketsCount.ToString();
             totalReceiptsDisplay.Text = totalTransactionAmount.ToString("C");
             avgTransValueDisplay.Text = (totalTransactionAmount / totalTicketsCount).ToString("C");
+        }
+
+        private void exitButton_MouseHover(object sender, EventArgs e)
+        {
+            toolTip.SetToolTip(exitButton, "Press to exit application");
+        }
+
+        private void clearButton_MouseHover(object sender, EventArgs e)
+        {
+            toolTip.SetToolTip(clearButton, "Press to go back to the previous screen");
+        }
+
+        private void calculateButton_MouseHover(object sender, EventArgs e)
+        {
+            if(calculateButton.Text.Length > 0)
+                toolTip.SetToolTip(calculateButton, "Press to calculate the price of the tickets");
+        }
+
+        private void summaryButton_MouseHover(object sender, EventArgs e)
+        {
+            if (summaryButton.Text.Length > 0)
+                toolTip.SetToolTip(summaryButton, "Press to show a summary of all transactions so far");
         }
     }
 }

@@ -29,6 +29,7 @@ namespace Assignment1
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.homeScreenImage = new System.Windows.Forms.PictureBox();
             this.enterButton = new System.Windows.Forms.Button();
@@ -59,6 +60,7 @@ namespace Assignment1
             this.adultCountLabel = new System.Windows.Forms.Label();
             this.cashierNameInput = new System.Windows.Forms.TextBox();
             this.cashierNameLabel = new System.Windows.Forms.Label();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.homeScreenImage)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -308,6 +310,7 @@ namespace Assignment1
             this.exitButton.Text = "&Exit";
             this.exitButton.UseVisualStyleBackColor = false;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            this.exitButton.MouseHover += new System.EventHandler(this.exitButton_MouseHover);
             // 
             // summaryButton
             // 
@@ -324,6 +327,7 @@ namespace Assignment1
             this.summaryButton.TabIndex = 4;
             this.summaryButton.UseVisualStyleBackColor = false;
             this.summaryButton.Click += new System.EventHandler(this.summaryButton_Click);
+            this.summaryButton.MouseHover += new System.EventHandler(this.summaryButton_MouseHover);
             // 
             // clearButton
             // 
@@ -341,6 +345,7 @@ namespace Assignment1
             this.clearButton.Text = "&Clear";
             this.clearButton.UseVisualStyleBackColor = false;
             this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
+            this.clearButton.MouseHover += new System.EventHandler(this.clearButton_MouseHover);
             // 
             // calculateButton
             // 
@@ -358,6 +363,7 @@ namespace Assignment1
             this.calculateButton.Text = "C&alculate";
             this.calculateButton.UseVisualStyleBackColor = false;
             this.calculateButton.Click += new System.EventHandler(this.calculateButton_Click);
+            this.calculateButton.MouseHover += new System.EventHandler(this.calculateButton_MouseHover);
             // 
             // ticketsCountSection
             // 
@@ -443,7 +449,7 @@ namespace Assignment1
             // 
             this.cashierNameInput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cashierNameInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.cashierNameInput.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cashierNameInput.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cashierNameInput.Location = new System.Drawing.Point(525, 64);
             this.cashierNameInput.Name = "cashierNameInput";
             this.cashierNameInput.Size = new System.Drawing.Size(302, 39);
@@ -459,6 +465,12 @@ namespace Assignment1
             this.cashierNameLabel.Size = new System.Drawing.Size(171, 96);
             this.cashierNameLabel.TabIndex = 0;
             this.cashierNameLabel.Text = "Cashier Name\r\n\r\n\r\n";
+            // 
+            // toolTip
+            // 
+            this.toolTip.IsBalloon = true;
+            this.toolTip.Tag = "Press to exit application";
+            this.toolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             // 
             // Form1
             // 
@@ -521,6 +533,7 @@ namespace Assignment1
         private System.Windows.Forms.Label avgTransValueDisplay;
         private System.Windows.Forms.Label avgTransValueLabel;
         private System.Windows.Forms.Label cashierNameDisplay;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }
 
