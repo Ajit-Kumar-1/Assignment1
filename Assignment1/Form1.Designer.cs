@@ -33,9 +33,9 @@ namespace Assignment1
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.homeScreenImage = new System.Windows.Forms.PictureBox();
             this.enterButton = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.homePanel = new System.Windows.Forms.Panel();
+            this.mainPanel = new System.Windows.Forms.Panel();
+            this.mainScreenImage = new System.Windows.Forms.PictureBox();
             this.informationDisplay = new System.Windows.Forms.GroupBox();
             this.summaryTable = new System.Windows.Forms.TableLayoutPanel();
             this.avgTransValueDisplay = new System.Windows.Forms.Label();
@@ -46,7 +46,7 @@ namespace Assignment1
             this.totalReceiptsLabel = new System.Windows.Forms.Label();
             this.avgTransValueLabel = new System.Windows.Forms.Label();
             this.cashierNameDisplay = new System.Windows.Forms.Label();
-            this.optionButtonContainer = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonContainer = new System.Windows.Forms.TableLayoutPanel();
             this.exitButton = new System.Windows.Forms.Button();
             this.summaryButton = new System.Windows.Forms.Button();
             this.clearButton = new System.Windows.Forms.Button();
@@ -62,12 +62,12 @@ namespace Assignment1
             this.cashierNameLabel = new System.Windows.Forms.Label();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.homeScreenImage)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.homePanel.SuspendLayout();
+            this.mainPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mainScreenImage)).BeginInit();
             this.informationDisplay.SuspendLayout();
             this.summaryTable.SuspendLayout();
-            this.optionButtonContainer.SuspendLayout();
+            this.buttonContainer.SuspendLayout();
             this.ticketsCountSection.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,40 +97,40 @@ namespace Assignment1
             this.enterButton.UseVisualStyleBackColor = false;
             this.enterButton.Click += new System.EventHandler(this.enterButton_Click);
             // 
-            // panel1
+            // homePanel
             // 
-            this.panel1.Controls.Add(this.homeScreenImage);
-            this.panel1.Controls.Add(this.enterButton);
-            this.panel1.Location = new System.Drawing.Point(-3, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(956, 1237);
-            this.panel1.TabIndex = 2;
+            this.homePanel.Controls.Add(this.homeScreenImage);
+            this.homePanel.Controls.Add(this.enterButton);
+            this.homePanel.Location = new System.Drawing.Point(-3, 0);
+            this.homePanel.Name = "homePanel";
+            this.homePanel.Size = new System.Drawing.Size(956, 1237);
+            this.homePanel.TabIndex = 2;
             // 
-            // panel2
+            // mainPanel
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.informationDisplay);
-            this.panel2.Controls.Add(this.optionButtonContainer);
-            this.panel2.Controls.Add(this.ticketsCountSection);
-            this.panel2.Controls.Add(this.cashierNameInput);
-            this.panel2.Controls.Add(this.cashierNameLabel);
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(953, 1237);
-            this.panel2.TabIndex = 2;
-            this.panel2.Visible = false;
+            this.mainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.mainPanel.Controls.Add(this.mainScreenImage);
+            this.mainPanel.Controls.Add(this.informationDisplay);
+            this.mainPanel.Controls.Add(this.buttonContainer);
+            this.mainPanel.Controls.Add(this.ticketsCountSection);
+            this.mainPanel.Controls.Add(this.cashierNameInput);
+            this.mainPanel.Controls.Add(this.cashierNameLabel);
+            this.mainPanel.Location = new System.Drawing.Point(0, 0);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(953, 1237);
+            this.mainPanel.TabIndex = 2;
+            this.mainPanel.Visible = false;
             // 
-            // pictureBox1
+            // mainScreenImage
             // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(76, 1037);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(792, 172);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.mainScreenImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("mainScreenImage.BackgroundImage")));
+            this.mainScreenImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.mainScreenImage.ErrorImage = ((System.Drawing.Image)(resources.GetObject("mainScreenImage.ErrorImage")));
+            this.mainScreenImage.Location = new System.Drawing.Point(76, 1037);
+            this.mainScreenImage.Name = "mainScreenImage";
+            this.mainScreenImage.Size = new System.Drawing.Size(792, 172);
+            this.mainScreenImage.TabIndex = 5;
+            this.mainScreenImage.TabStop = false;
             // 
             // informationDisplay
             // 
@@ -174,6 +174,7 @@ namespace Assignment1
             this.avgTransValueDisplay.AutoSize = true;
             this.avgTransValueDisplay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.avgTransValueDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.avgTransValueDisplay.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.avgTransValueDisplay.Location = new System.Drawing.Point(366, 194);
             this.avgTransValueDisplay.Margin = new System.Windows.Forms.Padding(8);
             this.avgTransValueDisplay.Name = "avgTransValueDisplay";
@@ -188,6 +189,7 @@ namespace Assignment1
             this.totalReceiptsDisplay.AutoSize = true;
             this.totalReceiptsDisplay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.totalReceiptsDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.totalReceiptsDisplay.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.totalReceiptsDisplay.Location = new System.Drawing.Point(366, 132);
             this.totalReceiptsDisplay.Margin = new System.Windows.Forms.Padding(8);
             this.totalReceiptsDisplay.Name = "totalReceiptsDisplay";
@@ -201,6 +203,7 @@ namespace Assignment1
             this.totalTicketsSoldDisplay.AutoSize = true;
             this.totalTicketsSoldDisplay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.totalTicketsSoldDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.totalTicketsSoldDisplay.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.totalTicketsSoldDisplay.Location = new System.Drawing.Point(366, 70);
             this.totalTicketsSoldDisplay.Margin = new System.Windows.Forms.Padding(8);
             this.totalTicketsSoldDisplay.Name = "totalTicketsSoldDisplay";
@@ -267,6 +270,7 @@ namespace Assignment1
             this.cashierNameDisplay.AutoSize = true;
             this.cashierNameDisplay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cashierNameDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cashierNameDisplay.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cashierNameDisplay.Location = new System.Drawing.Point(366, 8);
             this.cashierNameDisplay.Margin = new System.Windows.Forms.Padding(8);
             this.cashierNameDisplay.Name = "cashierNameDisplay";
@@ -275,24 +279,24 @@ namespace Assignment1
             this.cashierNameDisplay.Text = "label1";
             this.cashierNameDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // optionButtonContainer
+            // buttonContainer
             // 
-            this.optionButtonContainer.ColumnCount = 4;
-            this.optionButtonContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.optionButtonContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.optionButtonContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.optionButtonContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.optionButtonContainer.Controls.Add(this.exitButton, 3, 0);
-            this.optionButtonContainer.Controls.Add(this.summaryButton, 2, 0);
-            this.optionButtonContainer.Controls.Add(this.clearButton, 1, 0);
-            this.optionButtonContainer.Controls.Add(this.calculateButton, 0, 0);
-            this.optionButtonContainer.Location = new System.Drawing.Point(76, 413);
-            this.optionButtonContainer.Name = "optionButtonContainer";
-            this.optionButtonContainer.Padding = new System.Windows.Forms.Padding(10);
-            this.optionButtonContainer.RowCount = 1;
-            this.optionButtonContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.optionButtonContainer.Size = new System.Drawing.Size(788, 106);
-            this.optionButtonContainer.TabIndex = 3;
+            this.buttonContainer.ColumnCount = 4;
+            this.buttonContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.buttonContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.buttonContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.buttonContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.buttonContainer.Controls.Add(this.exitButton, 3, 0);
+            this.buttonContainer.Controls.Add(this.summaryButton, 2, 0);
+            this.buttonContainer.Controls.Add(this.clearButton, 1, 0);
+            this.buttonContainer.Controls.Add(this.calculateButton, 0, 0);
+            this.buttonContainer.Location = new System.Drawing.Point(76, 413);
+            this.buttonContainer.Name = "buttonContainer";
+            this.buttonContainer.Padding = new System.Windows.Forms.Padding(10);
+            this.buttonContainer.RowCount = 1;
+            this.buttonContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.buttonContainer.Size = new System.Drawing.Size(788, 106);
+            this.buttonContainer.TabIndex = 3;
             // 
             // exitButton
             // 
@@ -477,21 +481,21 @@ namespace Assignment1
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 1238);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.mainPanel);
+            this.Controls.Add(this.homePanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Welcome to Mega Cinema";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.homeScreenImage)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.homePanel.ResumeLayout(false);
+            this.mainPanel.ResumeLayout(false);
+            this.mainPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mainScreenImage)).EndInit();
             this.informationDisplay.ResumeLayout(false);
             this.summaryTable.ResumeLayout(false);
             this.summaryTable.PerformLayout();
-            this.optionButtonContainer.ResumeLayout(false);
+            this.buttonContainer.ResumeLayout(false);
             this.ticketsCountSection.ResumeLayout(false);
             this.ticketsCountSection.PerformLayout();
             this.ResumeLayout(false);
@@ -502,8 +506,8 @@ namespace Assignment1
 
         private System.Windows.Forms.PictureBox homeScreenImage;
         private System.Windows.Forms.Button enterButton;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel homePanel;
+        private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.GroupBox ticketsCountSection;
         private System.Windows.Forms.Label childCountLabel;
         private System.Windows.Forms.Label studentCountLabel;
@@ -513,7 +517,7 @@ namespace Assignment1
         private System.Windows.Forms.TextBox adultCountInput;
         private System.Windows.Forms.TextBox childCountInput;
         private System.Windows.Forms.TextBox studentCountInput;
-        private System.Windows.Forms.TableLayoutPanel optionButtonContainer;
+        private System.Windows.Forms.TableLayoutPanel buttonContainer;
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button summaryButton;
@@ -524,7 +528,7 @@ namespace Assignment1
         private System.Windows.Forms.Label totalTicketsSoldLabel;
         private System.Windows.Forms.Label totalReceiptsLabel;
         private System.Windows.Forms.Label AvgTransValueLabel;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox mainScreenImage;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label totalReceiptsDisplay;
